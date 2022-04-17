@@ -1,0 +1,20 @@
+[
+  {
+    "id": "1",
+    "slidHeading": "Effective Lessons",
+    "slidDescription": "An effective lesson gets students thinking and allows them to interact and ask questions, tap into their background knowledge, and build new skills.",
+    "img": "./images/slider1.jpg"
+  },
+  {
+    "id": "2",
+    "slidHeading": "Worksheets and Exercises",
+    "slidDescription": "The teacher comes with many resoueces such as worksheets, reading materials, additional videos, somatic exerices etc.",
+    "img": "./images/slider2.jpg"
+  },
+  {
+    "id": "3",
+    "slidHeading": "Class Resource Portal",
+    "slidDescription": "Access to my online resource portal which hosts all of my class recordings as well as my supporting resources. Class recordings available 24 hr after class and can be viewed at your own pace if you prefer.",
+    "img": "./images/slider3.jpg"
+  }
+]
