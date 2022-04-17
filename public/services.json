@@ -1,0 +1,23 @@
+[
+    {
+      "id": "1",
+      "name": "Home Tutoring",
+      "description": "It's a unique opportunity to learn in the home with your expected tutor in different categories. Everything is in favor of your need.",
+      "img": "./images/home.jpg",
+      "price": "10000 Taka / Month"
+    },
+    {
+        "id": "2",
+        "name": "Group Tutoring",
+        "description": "A group of students can full fill their hunger for learning at an affordable money range. Get ready for the competitive world!",
+        "img": "./images/group.jpg",
+        "price": "3000 Taka / Month"
+    },
+    {
+        "id": "3",
+        "name": "Online Tutoring",
+        "description": "Connect with the best tutors from anywhere and take online classes by using different tools. Make your life more easier with this process.",
+        "img": "./images/online.jpg",
+        "price": "7000 Taka / Month"
+    }
+]  

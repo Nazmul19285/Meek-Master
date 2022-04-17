@@ -20,8 +20,8 @@ const Slider = () => {
                     slides.map(slide =>
                     <div key={slide.id}>
                         <img src={slide.img} alt='' />
-                        <div className='font-bold absolute inset-0 top-1/2 lg:bottom-1/4 lg:bg-gray-400 p-2 lg:w-1/2 lg:left-1/4'>
-                            <p className="bg-gray-400 text-blue-900 text-xl lg:text-4xl">{slide.slidHeading}</p>
+                        <div className='font-bold absolute inset-0 top-1/2 lg:bottom-1/4 p-2 lg:w-1/2 lg:left-1/4'>
+                            <p className="text-blue-900 text-xl lg:text-4xl">{slide.slidHeading}</p>
                             <p className='hidden lg:block mt-4 text-xl text-white'>{slide.slidDescription}</p>
                         </div>
                     </div>)
