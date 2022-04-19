@@ -54,14 +54,6 @@ const Register = () => {
                 </div>
                 <button className='bg-lime-400 my-4 w-64 lg:w-96 py-2 hover:bg-lime-300'>Submit</button>
             </form>
-
-            <p className='text-xs text-gray-600'>Or, register with</p>
-            <div>
-                <button className='bg-blue-900 text-white my-4 w-64 lg:w-96 py-2 hover:bg-blue-700'>Facebook</button>
-            </div>
-            <div>
-                <button className='bg-lime-900 text-white w-64 lg:w-96 py-2 hover:bg-lime-700'>Google</button>
-            </div>
         </div>
     );
 };

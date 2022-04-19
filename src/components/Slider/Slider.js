@@ -1,8 +1,6 @@
-import React, { useEffect, useState, Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { useEffect, useState } from 'react';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
-import pic from '../../images/nazmul.jpg';
 
 const Slider = () => {
     const [slides, setSlides] = useState([]);
@@ -14,7 +12,7 @@ const Slider = () => {
     },[])
 
     return (
-        <div>
+        <div className='z-auto'>
             <Carousel>
                 {
                     slides.map(slide =>
@@ -30,6 +28,5 @@ const Slider = () => {
         </div>
     );
 };
-// ReactDOM.render(<DemoCarousel />, document.querySelector('.demo-carousel'));
 
 export default Slider;

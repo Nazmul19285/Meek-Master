@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
@@ -9,12 +9,8 @@ const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
     let from = location.state?.from?.pathname || '/';
-    const [
-        signInWithEmailAndPassword,
-        user,
-        loading,
-        error,
-      ] = useSignInWithEmailAndPassword(auth);
+    const [signInWithEmailAndPassword, user, loading, error,] = useSignInWithEmailAndPassword(auth);
+    const [signInWithGoogle, userGoogle, loadingGoogle, errorGoogle] = useSignInWithGoogle(auth);
 
     const handleEmail = (event) =>{
         setEmail(event.target.value);
@@ -28,7 +24,7 @@ const Login = () => {
         await signInWithEmailAndPassword(email,password);
     }
 
-    if(loading){
+    if(loading || loadingGoogle){
         return <h1>Loading...</h1>
     }
     if (error) {
@@ -38,7 +34,14 @@ const Login = () => {
           </div>
         );
     }
-    if(user){
+    if (errorGoogle) {
+        return (
+          <div>
+            <p>Error: {errorGoogle.message}</p>
+          </div>
+        );
+    }
+    if(user || userGoogle){
         navigate(from, { replace: true });
     }
 
@@ -61,10 +64,7 @@ const Login = () => {
 
             <p className='text-xs text-gray-600'>Or, login with</p>
             <div>
-                <button className='bg-blue-900 text-white my-4 w-64 lg:w-96 py-2 hover:bg-blue-700'>Facebook</button>
-            </div>
-            <div>
-                <button className='bg-orange-800 text-white w-64 lg:w-96 py-2 hover:bg-orange-500'>Google</button>
+                <button onClick={() => signInWithGoogle()} className='bg-orange-800 text-white w-64 lg:w-96 py-2 hover:bg-orange-500'>Google</button>
             </div>
         </div>
     );
