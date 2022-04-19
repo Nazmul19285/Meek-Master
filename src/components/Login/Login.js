@@ -23,11 +23,21 @@ const Login = () => {
         setPassword(event.target.value);
     }
 
-    const handleLogin = (event) =>{
+    const handleLogin = async (event) =>{
         event.preventDefault();
-        signInWithEmailAndPassword(email,password);
+        await signInWithEmailAndPassword(email,password);
     }
 
+    if(loading){
+        return <h1>Loading...</h1>
+    }
+    if (error) {
+        return (
+          <div>
+            <p>Error: {error.message}</p>
+          </div>
+        );
+    }
     if(user){
         navigate(from, { replace: true });
     }

@@ -9,7 +9,7 @@ const Register = () => {
         user,
         loading,
         error,
-      ] = useCreateUserWithEmailAndPassword(auth);
+      ] = useCreateUserWithEmailAndPassword(auth, {sendEmailVerification: true});
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const navigate = useNavigate();
@@ -22,11 +22,22 @@ const Register = () => {
         setPassword(event.target.value);
     }
 
-    const handleRegistert = (event) =>{
+    const handleRegistert = async(event) =>{
         event.preventDefault();
         if(email){
-            createUserWithEmailAndPassword(email, password);
+           await createUserWithEmailAndPassword(email, password);
         }
+    }
+    if (error) {
+        alert(error.message);
+        window.location.reload(false);
+    }
+    if(loading){
+        return <h1>Loading...</h1>
+    }
+    if(error){
+        alert(error);
+       
     }
     if(user){
         navigate('/home');
