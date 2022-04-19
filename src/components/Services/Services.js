@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import Checkout from '../Checkout/Checkout';
 
 const Services = () => {
     const [services, setServices] = useState([]);
@@ -8,7 +10,7 @@ const Services = () => {
             .then(data => setServices(data));
     },[])
     return (
-        <div className='mx-2 lg:mx-12'>
+        <div id='services' className='mx-2 lg:mx-12'>
             <h1 className='text-3xl lg:text-4xl font-bold my-8 lg:my-16'>My Services</h1>
             <div className='lg:grid grid-cols-3 lg:gap-6'>
             {
@@ -22,7 +24,7 @@ const Services = () => {
                             <h3 className='font-bold text-blue-900'>Price: {service.price}</h3>
                         </div>
                     </div>
-                    <button className='bg-lime-400 my-4 px-8 py-2 hover:bg-lime-300'>Buy Now</button>
+                    <Link className='text-end' to={'/checkout'}><button className='bg-lime-400 py-2 my-4 mx-auto w-48 hover:bg-lime-300'>Buy Now</button></Link>
                 </div>)
             }
             </div>
